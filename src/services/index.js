@@ -33,6 +33,14 @@ const createReport = async({incident, country, city}) => {
 	return newReport.rows[0]
 }
 
+const fetchIncidents = async() => {
+	const feed = await db.query(
+		`SELECT * FROM incident_report;`
+	)
+	return feed.rows
+}
+
 module.exports = {
-	createReport
+	createReport,
+	fetchIncidents
 }

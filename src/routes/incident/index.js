@@ -41,7 +41,7 @@ const createIncidentReport = catchAsync( async (req, res) => {
 			incident: newReport.incident_desc,
 			city: newReport.city,
 			country: newReport.country,
-			weatherReport: newReport.content
+			weatherReport: newReport.weather_report
 		}
 	})
 	

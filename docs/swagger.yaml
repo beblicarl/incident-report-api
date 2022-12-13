@@ -119,5 +119,90 @@ paths:
                               id: 2306104,
                               name: "Accra"
                               cod: 200
+    get:
+      tags:
+        - incident
+      operationId: fetchIncidents
+      summary: Get all incidents
+      description: Get all incidents
+      responses:
+        '200':
+          description: Get all incidents
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: successfully retrieved all incidents
+                    example: success
+                  data:
+                    type: array
+                    items:
+                      properties:
+                        clientId:
+                          type: integer
+                          description: client id 
+                          example: 10
+                        incident:
+                          type: string
+                          description: incident
+                          example: It is sunny today
+                        city:
+                          type: string
+                          description: city
+                          example: Accra
+                        country:
+                          type: string
+                          description: country
+                          example: Ghana
+                        date:
+                          type: string
+                          description: date request was made
+                          format: "Year-Month-Day"
+                          example: "2022-12-13"
+                        weatherReport:
+                          type: object
+                          description: weather report 
+                          example: 
+                            data:
+                              coord:
+                                lon: -0.2012
+                                lat: 5.5571
+                              weather: 
+                                  id: 800,
+                                  main: "Clear"
+                                  description: "clear sky"
+                                  icon: "01d"
+                              base: "stations"
+                              main:
+                                temp: 300.83
+                                feels_like: 303.57
+                                temp_min: 300.83
+                                temp_max: 300.83
+                                pressure: 1013
+                                humidity: 73
+                                sea_level: 1013
+                                grnd_level: 1009
+                              visibility: 10000
+                              wind:
+                                speed: 2.65
+                                deg: 246
+                                gust: 2.61
+                              clouds: 
+                                all: 5
+                              dt: 1670922768
+                              sys: 
+                                country: "GH"
+                                sunrise: 1670911255
+                                sunset: 1670953747
+                              timezone: 0
+                              id: 2306104,
+                              name: "Accra"
+                              cod: 200
+                        
       security:
-        - bearerAuth: []  
+        - bearerAuth: []
+        
+    

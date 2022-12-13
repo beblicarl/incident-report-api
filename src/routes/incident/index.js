@@ -27,9 +27,9 @@ const router = express.Router()
 const createIncidentReport = catchAsync( async (req, res) => {
 	
 	
-	const { incident, country, city } = req.body
+	const { incidentDescription, country, city } = req.body
 	const newReport = await reportService.createReport({
-		incident,
+		incidentDescription,
 		country, 
 		city
 	})
@@ -38,7 +38,7 @@ const createIncidentReport = catchAsync( async (req, res) => {
 		data: {
 			message: 'Incident report successfully posted',
 			clientId : newReport.client_id,
-			incident: newReport.incident_desc,
+			incidentDescription: newReport.incident_desc,
 			city: newReport.city,
 			country: newReport.country,
 			weatherReport: newReport.weather_report
@@ -55,7 +55,7 @@ const fetchIncidents = catchAsync( async(req, res) => {
 		status: 'success',
 		data: feed.map((incident) => ({
 			clientId : incident.client_id,
-			incident : incident.incident_desc,
+			incidentDescription : incident.incident_desc,
 			city: incident.city,
 			country: incident.country,
 			date: incident.date,

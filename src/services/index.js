@@ -12,7 +12,7 @@ const {
 
 
 let weatherReport
-const createReport = async({incident, country, city}) => {
+const createReport = async({incidentDescription, country, city}) => {
 	
 	const response  = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${process.env.API_KEY}`)
 	const {data} = response
@@ -32,7 +32,7 @@ const createReport = async({incident, country, city}) => {
 		  VALUES ($1 , $2 , $3 , $4 ) 
 		  RETURNING client_id, incident_desc, city, country , date , 
           weather_report`,
-		[incident, city, country, weatherReport]
+		[incidentDescription, city, country, weatherReport]
 	)
 	return newReport.rows[0]
 }
@@ -40,8 +40,7 @@ const createReport = async({incident, country, city}) => {
 const fetchIncidents = async() => {
 	const feed = await db.query(
 		`SELECT * 
-		 FROM incident_report
-		 ORDER BY incident_desc DESC;`
+		 FROM incident_report;`
 	)
 	return feed.rows
 }

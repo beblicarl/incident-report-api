@@ -27,7 +27,7 @@ paths:
             schema:
               type: object
               properties:
-                incident:
+                incidentDescription:
                   type: string
                   description: incident
                   example: it is sunny today
@@ -63,7 +63,7 @@ paths:
                         type: integer
                         description: client id 
                         example: 10
-                      incident:
+                      incidentDescription:
                         type: string
                         description: incident
                         example: It is sunny today
@@ -145,7 +145,7 @@ paths:
                           type: integer
                           description: client id 
                           example: 10
-                        incident:
+                        incidentDescription:
                           type: string
                           description: incident
                           example: It is sunny today

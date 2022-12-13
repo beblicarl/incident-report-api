@@ -6,6 +6,10 @@ const {
 	customError
 } = require('../lib')
 
+const {
+	IncidentReportDoesNotExistError
+} = require('./error')
+
 
 let weatherReport
 const createReport = async({incident, country, city}) => {
@@ -19,7 +23,7 @@ const createReport = async({incident, country, city}) => {
 		weatherReport = result.data
 		
 	} catch (error) {
-		throw customError(error)
+		throw customError(IncidentReportDoesNotExistError)
 	}
 	
 	
@@ -36,7 +40,9 @@ const createReport = async({incident, country, city}) => {
 
 const fetchIncidents = async() => {
 	const feed = await db.query(
-		`SELECT * FROM incident_report;`
+		`SELECT * 
+		 FROM incident_report
+		 ORDER BY incident_desc DESC;`
 	)
 	return feed.rows
 }

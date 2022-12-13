@@ -6,11 +6,11 @@ const incidentReportSchema = Joi.object({
 			.min(3)
 			.required(),
 		city: Joi.string()
-			.min(3)
+			.min(2)
 			.max(100)
 			.required(),
 		country: Joi.string()
-			.min(3)
+			.min(2)
 			.max(100)
 			.required()
 	}

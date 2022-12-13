@@ -3,6 +3,7 @@ const cors = require('cors')
 const swaggerUI = require('swagger-ui-express')
 const fs = require('fs')
 const YAML = require('yaml')
+const { AppError } = require('./lib')
 
 const router = require('./routes/index')
 
@@ -25,5 +26,12 @@ app.get('/api/v1/health', (req, res) => {
 // Routes
 app.use('/api/v1', router)
 
+app.all('*', (req, res, next) => {
+	const err = new AppError(
+		`Cannot find the requested url ${req.originalUrl}`,
+		404
+	)
+	next(err)
+})
 
 module.exports = app

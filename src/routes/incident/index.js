@@ -47,8 +47,30 @@ const createIncidentReport = catchAsync( async (req, res) => {
 	
 })
 
+const fetchIncidents = catchAsync( async(req, res) => {
+	
+	const feed = await reportService.fetchIncidents()
+
+	res.status(200).json({
+		status: 'success',
+		data: feed.map((incident) => ({
+			clientId : incident.client_id,
+			incident : incident.incident_desc,
+			city: incident.city,
+			country: incident.country,
+			date: incident.date,
+			weatherReport: incident.weather_report
+
+		})
+		)
+	})
+	
+})
+
+
 router
 	.route('/')
+	.get(fetchIncidents)
 	.post( validateSchema(incidentReportSchema), createIncidentReport)
 
 router

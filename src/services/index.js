@@ -2,7 +2,9 @@
 const axios = require('axios')
 const db = require('../db')
 require('dotenv').config()
-const customError = require('../lib/custom-error')
+const { 
+	customError
+} = require('../lib')
 
 
 let weatherReport
@@ -17,7 +19,6 @@ const createReport = async({incident, country, city}) => {
 		weatherReport = result.data
 		
 	} catch (error) {
-		console.log(error)
 		throw customError(error)
 	}
 	

@@ -13,20 +13,19 @@ const {
 
 let weatherReport
 const createReport = async({incident, country, city}) => {
-	try {
-		const response  = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${process.env.API_KEY}`)
-		const {data} = response
-		const {lat , lon} = data[0]
-        
-
-		const result = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}`)
-		weatherReport = result.data
-		
-	} catch (error) {
+	
+	const response  = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${process.env.API_KEY}`)
+	const {data} = response
+	if( data.length === 0){
 		throw customError(IncidentReportDoesNotExistError)
 	}
-	
-	
+	const {lat , lon} = data[0]
+        
+
+	const result = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}`)
+	weatherReport = result.data
+		
+
 	const newReport = await db.query(
 		`INSERT INTO incident_report
 		 (incident_desc, city, country, weather_report )

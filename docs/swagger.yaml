@@ -4,7 +4,7 @@ info:
   description: An API for incident reports for insurance clients.
   version: 1.0.0
 servers:
-  - url: http://localhost:3000/api/v1
+  - url: https://incident-report-api-production-de33.up.railway.app/api/v1
     description: Main (production) server
   - url: http://localhost:3000/api/v1
     description: Internal development server for local testing

@@ -27,7 +27,7 @@ const createReport = async({incident, country, city}) => {
 		 (incident_desc, city, country, weather_report )
 		  VALUES ($1 , $2 , $3 , $4 ) 
 		  RETURNING client_id, incident_desc, city, country , date , 
-          weather_report content`,
+          weather_report`,
 		[incident, city, country, weatherReport]
 	)
 	return newReport.rows[0]

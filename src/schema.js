@@ -2,7 +2,7 @@ const Joi = require('joi')
 
 const incidentReportSchema = Joi.object({
 	body:{
-		incident: Joi.string()
+		incidentDescription: Joi.string()
 			.min(3)
 			.required(),
 		city: Joi.string()

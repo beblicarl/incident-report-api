@@ -9,6 +9,7 @@ An in-depth paragraph about your project and overview of use.
 ## HOSTED LINKS
 - live endpoint = https://incident-report-api-production-de33.up.railway.app/api/v1
 - live documentation = https://incident-report-api-production-de33.up.railway.app/docs/
+- check api health = https://incident-report-api-production-de33.up.railway.app/api/v1/health
 
 ## Getting Started
 

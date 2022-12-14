@@ -1,14 +1,16 @@
 /* eslint-disable max-len */
 const axios = require('axios')
-const db = require('../db')
+const db = require('../../db')
 
 const { 
 	customError
-} = require('../lib')
+} = require('../../lib')
 
 const {
 	IncidentReportDoesNotExistError
-} = require('./error')
+} = require('../error')
+
+const fetchIncidents = require('./fetch-incidents')
 
 
 let weatherReport
@@ -35,14 +37,6 @@ const createReport = async({incidentDescription, country, city}) => {
 		[incidentDescription, city, country, weatherReport]
 	)
 	return newReport.rows[0]
-}
-
-const fetchIncidents = async() => {
-	const feed = await db.query(
-		`SELECT * 
-		 FROM incident_report;`
-	)
-	return feed.rows
 }
 
 module.exports = {

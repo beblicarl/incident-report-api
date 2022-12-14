@@ -2,8 +2,6 @@
 
 ## Description
 
-Project Overview
-
 Incident Report API is an assignment given by Enyata Ghana. As part of this test, i was tasked to create endpoints to submit and list incident reports for insurance clients..
 
 

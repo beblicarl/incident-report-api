@@ -3,8 +3,9 @@ const cors = require('cors')
 const swaggerUI = require('swagger-ui-express')
 const fs = require('fs')
 const YAML = require('yaml')
-const globalErrorHandler = require('./middleware/global-errorhandler')
 
+const globalErrorHandler = require('./middleware/global-errorhandler')
+const { AppError } = require('./lib')
 
 const router = require('./routes/index')
 
@@ -28,9 +29,11 @@ app.get('/api/v1/health', (req, res) => {
 app.use('/api/v1', router)
 
 app.all('*', (req, res, next) => {
-	const error = new Error(`Cannot find the request url ${req.originalUrl}`)
-	error.status = 404
-	next(error)
+	const err = new AppError(
+		`Cannot find the requested url ${req.originalUrl}`,
+		404
+	)
+	next(err)
 })
 
 app.use(globalErrorHandler)

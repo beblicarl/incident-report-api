@@ -14,7 +14,7 @@ Incident Report API to submit and list incident reports for insurance clients..
 
 ### Dependencies
 
-    All of these are needed before installing program.
+All of these are needed before installing program.
 
 -   npm  - https://www.npmjs.com/
 -   node - https://nodejs.org/en/

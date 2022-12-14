@@ -19,19 +19,19 @@ Incident Report API is an assignment given by Enyata Ghana. As part of this test
 
 ### Installing
 
-2.  Clone the repo
+-  Clone the repo
     ```sh
     git clone https://github.com/beblicarl/incident-report-api.git
     ```
-3.  Install NPM packages
+-  Install NPM packages
     ```sh
     npm install
     ```
-4.  Create a .env file `.env` and update with env variables (check the .env.sample)
+-  Create a .env file `.env` and update with env variables (check the .env.sample)
 
 ### Executing program
 
-1. `npm run dev`
+- `npm run dev`
    Runs the app in the development mode.
 
 

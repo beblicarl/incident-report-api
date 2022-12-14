@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 const { logger } = require('../lib')
 
 const log = logger()
@@ -20,6 +18,7 @@ const sendError = (error, res) => {
 	}
 }
 
+// eslint-disable-next-line no-unused-vars
 module.exports = (error, req, res, next) => {
 	
 	sendError(error, res)

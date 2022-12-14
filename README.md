@@ -3,8 +3,8 @@
 ## Description
 
 Project Overview
-Incident Report API is an assignment given to Enyata Ghana. This api lists incident reports for insurance clients..
-An in-depth paragraph about your project and overview of use.
+Incident Report API is an assignment given by Enyata Ghana. As part of this test, i was tasked to create endpoints to submit and list incident reports for insurance clients..
+
 
 ## HOSTED LINKS
 - live endpoint = https://incident-report-api-production-de33.up.railway.app/api/v1
@@ -32,43 +32,7 @@ An in-depth paragraph about your project and overview of use.
 ### Executing program
 
 1. `npm run dev`
-   Runs the app in the development mode.\
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-
-## Help
-
-Any advise for common problems or issues.
-
-
-## Authors
-
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
--   0.2
-    -   Various bug fixes and optimizations
-    -   See [commit change]() or See [release history]()
--   0.1
-    -   Initial Release
-
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-
--   [awesome-readme](https://github.com/matiassingers/awesome-readme)
--   [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
--   [dbader](https://github.com/dbader/readme-template)
--   [zenorocha](https://gist.github.com/zenorocha/4526327)
--   [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
-
+   Runs the app in the development mode.
 
 
 

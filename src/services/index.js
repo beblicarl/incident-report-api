@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 const axios = require('axios')
 const db = require('../db')
-require('dotenv').config()
+
 const { 
 	customError
 } = require('../lib')

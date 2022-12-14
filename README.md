@@ -54,4 +54,4 @@ As part of this test, you are tasked to create endpoints to submit and list inci
 
 #### The required stack :
 NodeJS and express.
-PostgreSQL.
+PostgreSQL.s

@@ -5,7 +5,7 @@ const {
 	incidentReportSchema
 } = require('../../schema')
 const { 
-	IncidentReportDoesNotExistError 
+	CountryOrCityDoesNotExistOrCityIsNotLocatedInTheCountryError 
 } = require('../../services/error')
 
 
@@ -17,7 +17,7 @@ const {
 
 
 const ERROR_MAP = {
-	[IncidentReportDoesNotExistError.name] : 404
+	[CountryOrCityDoesNotExistOrCityIsNotLocatedInTheCountryError.name] : 404
 	
 }
 const log = logger()

@@ -1,7 +1,7 @@
 module.exports= {
-	IncidentReportDoesNotExistError : { 
-		name : 'IncidentReportDoesNotExistError', 
-		message : 'Incident report for city/country does not exist'
+	CountryOrCityDoesNotExistOrCityIsNotLocatedInTheCountryError : { 
+		name : 'CountryOrCityDoesNotExistOrCityIsNotLocatedInTheCountryError', 
+		message:`Country/City does not exist/City is not located in the country`
 	}
 
 }
